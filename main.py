@@ -20,6 +20,12 @@ def main(clas):
             ap.budgetPercents(int(args[0]), args[1])
         except IndexError:
             errMessage()
+    elif "-i" in opts:
+        import interestCalc as ic
+        try:
+            ic.calc(args[0], int(args[1]), int(args[2]), float(args[3]))
+        except IndexError:
+            errMessage()
     else:
         errMessage()
 
