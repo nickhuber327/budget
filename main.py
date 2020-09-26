@@ -1,8 +1,5 @@
 #main.py
 import sys
-import recommendedPercents as rp
-import actualPercents as ap
-import addEntry as ae
 
 def errMessage():
     raise SystemExit(f"Usage: {sys.argv[0]}  (-c) <arguments>...")
@@ -12,18 +9,15 @@ def main(clas):
     args = [arg for arg in clas if not arg.startswith("-")]
 
     if "-c" in opts:
+        import recommendedPercents as rp
         try:
-            rp.budgetPercents(args[0])
+            rp.budgetPercents(float(args[0]))
         except IndexError:
             errMessage()
     elif "-v" in opts:
+        import actualPercents as ap
         try:
-            ap.budgetPercents(args[0], args[1])
-        except IndexError:
-            errMessage()
-    elif "-a" in opts:
-        try:
-            ae.add(args[0:])
+            ap.budgetPercents(int(args[0]), args[1])
         except IndexError:
             errMessage()
     else:

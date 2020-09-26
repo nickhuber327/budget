@@ -2,7 +2,6 @@
 
 def budgetPercents(income):
     """Calculates the recommended perecentages of the 5 category budget at any income"""
-    income = float(income)
     percents = [.35, .15, .25, .1, .15]
     categories = [
         "Housing",
@@ -19,7 +18,7 @@ def budgetPercents(income):
         count += 1
 
     budget[categories[count]] = income
-        
+
     for key in budget:
         print(key, ': ', budget[key])
 
