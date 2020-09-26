@@ -1,14 +1,20 @@
 #main.py
 import sys
 
+help = """Budget Tool Help
+-c <income> recommended percentages
+-v <income> <filename> actual percentages based off of spending from csv file
+-i <month/year> <term> <interest rate> <principal> interest calculator"""
+
 def errMessage():
     raise SystemExit(f"Usage: {sys.argv[0]}  (-c) <arguments>...")
 
 def main(clas):
     opts = [opt for opt in clas if opt.startswith("-")]
     args = [arg for arg in clas if not arg.startswith("-")]
-
-    if "-c" in opts:
+    if "-h" in opts:
+        print(help)
+    elif "-c" in opts:
         import recommendedPercents as rp
         try:
             rp.budgetPercents(float(args[0]))
@@ -27,7 +33,7 @@ def main(clas):
         except IndexError:
             errMessage()
     else:
-        errMessage()
+        print(help)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
