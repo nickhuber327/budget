@@ -32,6 +32,12 @@ def main(clas):
             ic.calc(args[0], int(args[1]), int(args[2]), float(args[3]))
         except IndexError:
             errMessage()
+    elif "-a" in opts:
+        import addEntry as ae
+        try:
+            ae.add(args[0], args[1], args[2], args[3], float(args[4]))
+        except IndexError:
+            errMessage()
     else:
         print(help)
 

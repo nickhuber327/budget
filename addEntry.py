@@ -1,24 +1,43 @@
 from pathlib import Path
 import csv
 
-def add(entry, filename):
-    if Path(fileman).is_file():
-        with open(filename, mode='w') as budgetFile:
-            fieldnames = ['name', 'age', 'gender']
-            writer = csv.DictWriter(csvFile, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerow({'name': 'Jack Smith', 'age': 40, 'gender': 'Male'})
-    else:
-        with open(filename, mode='a') as budgetFile:
-	fieldnames = ['name', 'age', 'gender']
-	writer = csv.DictWriter(csvFile, fieldnames=fieldnames)
-	writer.writerow({'name': 'Jack Smith', 'age': 40, 'gender': 'Male'})
+def add(filename, date, item, category, cost):
+    if category != "income":
+        cost *= -1
         
-if __name__ == "__main__":
+    if Path(filename).is_file():
+        with open(filename, mode='r') as budgetFile:
+            budgetReader = csv.DictReader(budgetFile)
+            sum = cost
+            for row in budgetReader:
+                sum += float(row["cost"])
 
-with open('C:/Users/nickh/Desktop/example.csv', mode='a') as csvFile:
-	fieldnames = ['name', 'age', 'gender']
-	writer = csv.DictWriter(csvFile, fieldnames=fieldnames)
-	writer.writeheader()
-	writer.writerow({'name': 'Jack Smith', 'age': 40, 'gender': 'Male'})
-	writer.writerow({'name': 'Mandy Smith', 'age': 35, 'gender': 'Female'})
+        with open(filename, mode='a') as budgetFile:
+            fieldnames = ['date',
+            'item',
+            'category',
+            'cost',
+            'sum']
+            writer = csv.DictWriter(budgetFile, fieldnames=fieldnames)
+            writer.writerow({'date': date,
+            'item': item,
+            'category': category,
+            'cost': cost,
+            'sum': sum})
+    else:
+        with open(filename, mode='w') as budgetFile:
+            fieldnames = ['date',
+            'item',
+            'category',
+            'cost',
+            'sum']
+            writer = csv.DictWriter(budgetFile, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerow({'date': date,
+            'item': item,
+            'category': category,
+            'cost': cost,
+            'sum' : 0})
+
+if __name__ == "__main__":
+    add()
