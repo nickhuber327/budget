@@ -38,6 +38,14 @@ def main(clas):
             ae.add(args[0], args[1], args[2], args[3], float(args[4]))
         except IndexError:
             errMessage()
+
+    elif "-e" in opts:
+        import export as e
+        try:
+            e.export(float(args[0]), args[1], args[2])
+        except IndexError:
+            errMessage()
+
     else:
         print(help)
 

@@ -1,9 +1,9 @@
 #actualPercents
 import csv
 
-def budgetPercents(income, filename):
+def calcPercents(income, filename):
     """Calculates the actual percentages of the 5 category budget at any income"""
-    
+
     budget = {"Housing" : 0,
               "Transportation" : 0,
               "Food" : 0,
@@ -32,11 +32,17 @@ def budgetPercents(income, filename):
         if key != "Total":
             budget["Total"] += budget[key]
 
-    print("Dollar values:")
+    return budget
+
+def budgetPercents(income, filename):
+    """Displays 5 category budget"""
+    budget = calcPercents(income, filename)
+
+    print("DOLLAR VALUES:")
     for key in budget:
         print(f'{key}: {budget[key]}')
-
-    print("Percentages:")
+    print("\n")
+    print("PERCENTAGES:")
     for key in budget:
         print(f'{key}: {budget[key] / income * 100}')
 

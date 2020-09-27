@@ -4,7 +4,13 @@ import csv
 def add(filename, date, item, category, cost):
     if category != "income":
         cost *= -1
-        
+
+    fieldnames = ['date',
+    'item',
+    'category',
+    'cost',
+    'sum']
+
     if Path(filename).is_file():
         with open(filename, mode='r') as budgetFile:
             budgetReader = csv.DictReader(budgetFile)
@@ -13,11 +19,6 @@ def add(filename, date, item, category, cost):
                 sum += float(row["cost"])
 
         with open(filename, mode='a') as budgetFile:
-            fieldnames = ['date',
-            'item',
-            'category',
-            'cost',
-            'sum']
             writer = csv.DictWriter(budgetFile, fieldnames=fieldnames)
             writer.writerow({'date': date,
             'item': item,
@@ -26,11 +27,6 @@ def add(filename, date, item, category, cost):
             'sum': sum})
     else:
         with open(filename, mode='w') as budgetFile:
-            fieldnames = ['date',
-            'item',
-            'category',
-            'cost',
-            'sum']
             writer = csv.DictWriter(budgetFile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerow({'date': date,
