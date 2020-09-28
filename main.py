@@ -3,8 +3,10 @@ import sys
 
 help = """Budget Tool Help
 -c <income> recommended percentages
--v <income> <filename> actual percentages based off of spending from csv file
--i <month/year> <term> <interest rate> <principal> interest calculator"""
+-p <filename> actual percentages based off of spending from csv file
+-i <month/year> <term> <interest rate> <principal> interest calculator
+-a <filename> <date> <item> <category> <cost>
+-e <filename>"""
 
 def errMessage():
     raise SystemExit(f"Usage: {sys.argv[0]}  (-c) <arguments>...")
@@ -20,10 +22,10 @@ def main(clas):
             rp.budgetPercents(float(args[0]))
         except IndexError:
             errMessage()
-    elif "-v" in opts:
+    elif "-p" in opts:
         import actualPercents as ap
         try:
-            ap.budgetPercents(int(args[0]), args[1])
+            ap.budgetPercents(args[0])
         except IndexError:
             errMessage()
     elif "-i" in opts:
@@ -42,7 +44,14 @@ def main(clas):
     elif "-e" in opts:
         import export as e
         try:
-            e.export(float(args[0]), args[1], args[2])
+            e.export(args[0])
+        except IndexError:
+            errMessage()
+
+    elif "-v" in opts:
+        import vis as v
+        try:
+            v.stack(args[0])
         except IndexError:
             errMessage()
 

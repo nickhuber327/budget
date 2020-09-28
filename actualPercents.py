@@ -1,7 +1,7 @@
 #actualPercents
 import csv
 
-def calcPercents(income, filename):
+def calcPercents(filename):
     """Calculates the actual percentages of the 5 category budget at any income"""
 
     budget = {"Housing" : 0,
@@ -10,6 +10,7 @@ def calcPercents(income, filename):
               "Personal" : 0,
               "Savings" : 0,
               "Debt" : 0,
+              "Income" : 0,
               "Total" : 0}
     with open(filename, mode='r') as budgetFile:
         budgetReader = csv.DictReader(budgetFile)
@@ -27,6 +28,8 @@ def calcPercents(income, filename):
                 budget["Savings"] += round(abs(float(row["cost"])),2)
             elif row["category"] == "debt":
                 budget["Debt"] += round(abs(float(row["cost"])),2)
+            elif row["category"] == "income":
+                budget["Income"] += round(abs(float(row["cost"])),2)
 
     for key in budget:
         if key != "Total":
@@ -34,14 +37,18 @@ def calcPercents(income, filename):
 
     return budget
 
-def budgetPercents(income, filename):
+def budgetPercents(filename):
     """Displays 5 category budget"""
-    budget = calcPercents(income, filename)
+    budget = calcPercents(filename)
+    income = budget["Income"]
 
     print("DOLLAR VALUES:")
     for key in budget:
         print(f'{key}: {budget[key]}')
     print("\n")
+
+    budget.pop("Income")
+    
     print("PERCENTAGES:")
     for key in budget:
         print(f'{key}: {budget[key] / income * 100}')
