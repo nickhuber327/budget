@@ -32,7 +32,14 @@ def graph(filename="ledgers/master.csv"):
             categories["Income"].append(float(row["Income"]))
             categories["Month"].append(row["Month"])
 
-    ax.plot_date(categories["Month"], categories["Housing"], '-', label="Housing")
+    ax.plot_date(categories["Month"], categories["Housing"], '-', color=colors[0], label="Housing")
+    ax.plot_date(categories["Month"], categories["Transportation"], "-", color= colors[1], label="Transporation")
+    ax.plot_date(categories["Month"], categories["Food"], "-", color=colors[2], label="Food")
+    ax.plot_date(categories["Month"], categories["Personal"], "-", color=colors[3], label="Personal")
+    ax.plot_date(categories["Month"], categories["Savings"], "-", color=colors[4], label="Savings")
+    ax.plot_date(categories["Month"], categories["Debt"], "-", color=colors[5], label="Debt")
+    ax.plot_date(categories["Month"], categories["Income"], "-", color=colors[6], label="Income")
+    
     """
     plt.plot([], [], color=colors[0], label='Housing', linewidth=5)
     plt.plot([], [], color=colors[1], label='Transportation', linewidth=5)
