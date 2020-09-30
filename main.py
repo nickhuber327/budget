@@ -3,13 +3,16 @@ import sys
 
 help = """Budget Tool Help
 -c <income> recommended percentages
--p <filename> actual percentages based off of spending from csv file
+-p <month> actual percentages based off of spending from csv file
 -i <month/year> <term> <interest rate> <principal> interest calculator
--a <filename> <date> <item> <category> <cost>
--e <filename>"""
+-a <month> <date> <item> <category> <cost>
+-e <month>"""
 
 def errMessage():
     raise SystemExit(f"Usage: {sys.argv[0]}  (-c) <arguments>...")
+
+def month2file(month):
+    return "ledgers/"+month+".csv"
 
 def main(clas):
     opts = [opt for opt in clas if opt.startswith("-")]
@@ -25,7 +28,7 @@ def main(clas):
     elif "-p" in opts:
         import actualPercents as ap
         try:
-            ap.budgetPercents(args[0])
+            ap.budgetPercents(month2file(args[0]))
         except IndexError:
             errMessage()
     elif "-i" in opts:
@@ -37,14 +40,14 @@ def main(clas):
     elif "-a" in opts:
         import addEntry as ae
         try:
-            ae.add(args[0], args[1], args[2], args[3], float(args[4]))
+            ae.add(month2file(args[0]), args[1], args[2], args[3], float(args[4]))
         except IndexError:
             errMessage()
 
     elif "-e" in opts:
         import export as e
         try:
-            e.export(args[0])
+            e.export(month2file(args[0]))
         except IndexError:
             errMessage()
 

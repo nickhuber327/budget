@@ -1,0 +1,105 @@
+date,item,category,cost,sum
+20200721,checkings,income,706.27,
+20200721,applebees,food,-19.81,686.46
+20200722,microsoft office,personal,-160,526.46
+20200723,sonic,food,-4.64,521.82
+20200724,vending machine,food,-1.25,520.57
+20200724,eskimo hut,food,-26.25,494.32
+20200725,5star,personal,-170,324.32
+20200725,eskimo hut,food,-18.57,305.75
+20200725,sukis,personal,-15.6,290.15
+20200725,aafes,transportation,-17.44,272.71
+20200725,rudys,food,-10.98,261.73
+20200725,spotify,personal,-9.99,251.74
+20200725,biggs mini mall,food,-8.84,242.9
+20200725,cash app,personal,-5.66,237.24
+20200725,mjs gaming,food,-5.39,231.85
+20200725,cash app,personal,-5.3,226.55
+20200729,panda express,food,-25.28,201.27
+20200729,aafes,food,-4.58,196.69
+20200729,checkings,income,990.56,1187.25
+20200730,dennys,food,-18.51,1168.74
+20200730,fat bear,food,-10.97,1157.77
+20200730,cash app,income,13,1170.77
+20200731,dividend,income,0.05,1170.82
+20200731,at&t,utilities,-65.44,1105.38
+20200803,mcdonalds,food,-13.57,1091.81
+20200803,eskimo hut,food,-11.3,1080.51
+20200803,wb liquors,food,-8.11,1072.4
+20200803,boss chicken,food,-8.11,1064.29
+20200803,usaa,transportation,-83.38,980.91
+20200803,walmart,food,-45.56,935.35
+20200803,wb liquors,food,-26.49,908.86
+20200803,aafes,transportation,-18.6,890.26
+20200804,aafes,personal,-78.85,811.41
+20200804,panda express,food,-16.62,794.79
+20200805,mcdonalds,food,-9.49,785.3
+20200805,vending machine,food,-3,782.3
+20200805,vending machine,food,-3,779.3
+20200805,vending machine,food,-2.25,777.05
+20200806,aafes,food,-12.35,764.7
+20200806,vending machine,food,-1.5,763.2
+20200806,vending machine,food,-1.25,761.95
+20200807,aafes,transportation,-15.39,746.56
+20200807,vending machine,food,-2.19,744.37
+20200810,aafes,food,-3.98,740.39
+20200810,fahrenheit32,food,-6.48,733.91
+20200810,insomnia cookies,food,-7.2,726.71
+20200810,mcdonalds,food,-7.78,718.93
+20200810,apple cash,personal,-15,703.93
+20200810,sukis,personal,-16,687.93
+20200810,aafes,transportation,-17.99,649.09
+20200810,aafes,transportation,-20.85,649.09
+20200810,wendys,food,-24.11,624.98
+20200810,dennys,food,-25.38,599.6
+20200810,walmart,food,-34.69,564.91
+20200811,five guys,food,-15.34,549.57
+20200811,vending machine,food,-3,546.57
+20200812,checkings,income,1001.69,1548.26
+20200813,mcdonalds,food,-14.81,1533.45
+20200814,car loan,transportation,-311.29,1222.16
+20200814,aafes,transportation,-20.11,1202.05
+20200814,eskimo hut,food,-14.52,1187.53
+20200814,jack in the box,food,-9.84,1177.69
+20200814,aafes,food,-6,1171.69
+20200817,mcdonalds,food,-7,1164.69
+20200817,wendys,food,-11,1153.69
+20200817,five guys,food,-15.34,1138.35
+20200817,adobe,personal,-16.04,1122.31
+20200817,circle k,transportation,-18.38,1103.93
+20200817,aafes,personal,-19.03,1084.9
+20200817,nour,food,-22.43,1062.47
+20200817,aafes,personal,-49.2,1013.27
+20200817,game vault,blow,-52.43,960.84
+20200817,aafes,personal,-76.6,884.24
+20200817,usaa,transportation,-83.37,800.87
+20201818,sukis,personal,-15,785.87
+20200818,wing daddys,food,-13.36,772.51
+20200818,joe vinnys,food,-10.31,762.2
+20200818,walmart,personal,-9.26,752.94
+20200818,aafes,food,-6.99,745.95
+20200818,hobby lobby,personal,-2.15,743.8
+20200818,cash app,income,154.5,898.3
+20200819,walmart,food,-28.95,869.35
+20200819,apple,blow,-5.34,864.01
+20200820,wendys,food,-8.32,855.69
+20200820,walmart,food,-12.96,842.73
+20200820,game vault,blow,-21.55,821.18
+20200820,chase,debts,-81,740.18
+20200821,aafes,transportation,-16.44,723.74
+20200821,mcdonalds,food,-14.03,709.71
+20200821,aafes,food,-3,706.71
+20200821,biggs mini mall,personal,0.99,707.7
+20200824,zelle,income,1,708.7
+20200824,cash app,income,94.32,803.02
+20200824,zelle,income,1500,2303.02
+20200824,check,housing,-280,2023.02
+20200824,vending machine,food,-2,2021.02
+20200824,pizza hut,food,-2.71,2018.31
+20200824,aafes,food,-2.99,2015.32
+20200824,mcdonalds,food,-7.65,2007.67
+20200824,aafes,food,-7.79,1999.88
+20200824,biggs mini mall,transportation,-17.52,1982.36
+20200824,wendys,food,-19.03,1963.33
+20200824,enterprise,lend,-55.76,1907.57
+20200826,boss chicken,food,-9.18,1898.39

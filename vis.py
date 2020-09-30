@@ -1,8 +1,13 @@
 #Vis
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib import style
+
 import csv
 
-def stack(filename):
+def graph(filename="ledgers/master.csv"):
+    fig = plt.figure()
+    ax = plt.subplot2grid((1,1), (0,0))
     categories = {"Housing" : [],
     "Transportation" :  [],
     "Food" : [],
@@ -11,6 +16,9 @@ def stack(filename):
     "Debt" : [],
     "Income" : [],
     "Month" : []}
+
+    colors = ['m', 'c', 'r', 'k', 'y', 'b', 'g']
+
     with open(filename, mode='r') as masterFile:
         masterReader = csv.DictReader(masterFile)
 
@@ -24,14 +32,17 @@ def stack(filename):
             categories["Income"].append(float(row["Income"]))
             categories["Month"].append(row["Month"])
 
-    plt.plot([], [], color='m', label='Housing', linewidth=5)
-    plt.plot([], [], color='c', label='Transportation', linewidth=5)
-    plt.plot([], [], color='r', label='Food', linewidth=5)
-    plt.plot([], [], color='k', label='Personal', linewidth=5)
-    plt.plot([], [], color='y', label='Savings', linewidth=5)
-    plt.plot([], [], color='b', label='Debt', linewidth=5)
-    plt.plot([], [], color='g', label='Income', linewidth=5)
-
+    ax.plot_date(categories["Month"], categories["Housing"], '-', label="Housing")
+    """
+    plt.plot([], [], color=colors[0], label='Housing', linewidth=5)
+    plt.plot([], [], color=colors[1], label='Transportation', linewidth=5)
+    plt.plot([], [], color=colors[2], label='Food', linewidth=5)
+    plt.plot([], [], color=colors[3], label='Personal', linewidth=5)
+    plt.plot([], [], color=colors[4], label='Savings', linewidth=5)
+    plt.plot([], [], color=colors[5], label='Debt', linewidth=5)
+    plt.plot([], [], color=colors[6], label='Income', linewidth=5)
+    """
+    """
     plt.stackplot(categories["Month"],
     categories["Income"],
     categories["Housing"],
@@ -40,13 +51,13 @@ def stack(filename):
     categories["Personal"],
     categories["Savings"],
     categories["Debt"],
-    colors=['m','c','r','k','y','b','g'])
-
-    initiate()
-
-def initiate():
+    colors=colors)
+    """
     plt.xlabel("Month")
     plt.ylabel("Percentages")
     plt.title("Budget Trends")
     plt.legend()
     plt.show()
+
+if __name__ == '__main__':
+    graph()
