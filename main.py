@@ -9,7 +9,7 @@ help = """Budget Tool Help
 -e <month>"""
 
 def errMessage():
-    raise SystemExit(f"Usage: {sys.argv[0]}  (-c) <arguments>...")
+    raise SystemExit('Usage:'+{sys.argv[0]}+'(-c) <arguments>...')
 
 def month2file(month):
     return "ledgers/"+month+".csv"
